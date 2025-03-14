@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wed-Vision - 婚禮服務平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo" style="cursor: pointer;">Wed-Vision</div>
+        <nav>
+            <ul>
+                <li><a href="#">酒店</a></li>
+                <li><a href="#">婚紗</a></li>
+                <li><a href="#">攝影</a></li>
+                <li><a href="#">花束</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <button class="cart-button" data-count="0">📝 我的合約</button>
+            <button id="host-btn">合作商業面</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-container" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Hilary-Chan-Photography-Hong-Kong-Engagement-Rosewood-hotel-pre-wedding-photoshoot-portraits-Katie-Jim-08.jpg');">
+            <h1>尋找您夢想中的婚禮服務</h1>
+            <div class="search-form">
+                <form id="service-search">
+                    <input type="text" placeholder="請選擇服務" id="location" list="service-list">
+                    <datalist id="service-list">
+                        <!-- This will be dynamically populated based on service type -->
+                    </datalist>
+                    <input type="date" name="date" min="2024-03-10" max="2024-12-31">
+                    <select id="service-type">
+                        <option>所有服務</option>
+                        <option>婚禮場地</option>
+                        <option>婚紗攝影</option>
+                        <option>婚禮佈置</option>
+                    </select>
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="partner-calendar-section" style="display: none;">
+            <h2>合作商業務日曆</h2>
+            <div class="partner-calendar">
+                <!-- Calendar will be rendered here -->
+            </div>
+            <div class="partner-actions">
+                <button id="partner-application-btn">開始申請</button>
+            </div>
+        </section>
+
+        <section class="featured-services">
+            <h2>精選婚禮服務</h2>
+            <div class="services-container">
+                <div class="services-grid">
+                    <!-- Dynamically populated services -->
+                </div>
+                <div class="date-selection-sidebar">
+                    <!-- Dynamically populated date options -->
+                    <!-- New confirmation button will be added dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--
+    <div id="partner-modal" class="modal">
+        <div class="modal-content partner-content">
+            <span class="close-modal partner-close">&times;</span>
+            <h2>合作商業務日曆</h2>
+            <div class="partner-calendar">
+            </div>
+            <div class="partner-actions">
+                <button id="partner-application-btn">開始申請</button>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>智能合約</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <h3>總計</h3>
+                <p id="cart-total">HKD 0</p>
+                <button id="checkout-btn">生成正式合約</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <div>
+                    <h4>關於我們</h4>
+                    <a href="#">公司簡介</a>
+                    <a href="#">服務條款</a>
+                    <a href="#">隱私政策</a>
+                </div>
+                <div>
+                    <h4>客戶服務</h4>
+                    <a href="#">幫助中心</a>
+                    <a href="#">聯繫我們</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="copyright">
+            2023 Wed-Vision. 保留所有權利
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="partner-calendar.js"></script>
+</body>
+</html>
